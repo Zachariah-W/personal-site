@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Projects from "./Projects";
 import AboutMe from "./AboutMe";
-import Photoshop from "./Photoshop";
 import DesignAnimation from "./DesignAnimation";
 import { motion } from "framer-motion";
+import { FiChevronLeft } from "react-icons/fi";
 
 type PageStatus = {
   status: "home" | "about" | "design" | "photo" | "project";
@@ -34,44 +34,47 @@ const BasicInfo = () => {
           ? { rotateY: 180, height: "100vh", width: "100vw" }
           : { rotateY: 360, height: "260px", width: "480px" }
       }
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.8 }}
       onAnimationComplete={() => {
         setAnimating(false);
       }}
     >
-      <div className="backface-hidden absolute flex flex-row items-center justify-evenly gap-6 px-10 py-8 bg-rain shadow-xl bg-neutral-800 rounded-2xl text-neutral-300 border border-neutral-800">
+      <div className="backface-hidden absolute flex flex-row items-center justify-evenly gap-6 px-10 py-8 bg-rain shadow-xl bg-neutral-800 rounded-2xl text-neutral-300 border border-neutral-800 hover:animate-wiggle">
         <div className="flex flex-col justify-center gap-3 items-center h-full">
           <img
             className="rounded-2xl max-w-32"
-            src="/src/assets/Black_Linear_Fill_Black_Bg.png"
+            src="/src/Logos/Black_Linear_Fill_Black_Bg.png"
             alt="Image of Zachariah Wang"
           />
           <div className="flex flex-row items-center justify-center gap-3 *:w-8">
-            <a href="mailto:zachwangs@gmail.com">
+            <a href="mailto:zachwangs@gmail.com" target="_blank">
               <img
                 className="rounded-full hover:scale-105 duration-200"
-                src="/src/assets/gmail-icon.webp"
+                src="/src/Logos/gmail-icon.webp"
                 alt="Link to Gmail"
               />
             </a>
-            <a href="https://github.com/Zachariah-W">
+            <a href="https://github.com/Zachariah-W" target="_blank">
               <img
                 className="rounded-full hover:scale-105 duration-200"
-                src="/src/assets/github-icon.png"
+                src="/src/Logos/github-icon.png"
                 alt="Link to GitHub"
               />
             </a>
-            <a href="www.linkedin.com/in/zachariah-wang">
+            <a href="https:/linkedin.com/in/zachariah-wang" target="_blank">
               <img
                 className="rounded-full hover:scale-105 duration-200"
-                src="/src/assets/linkedin-icon.png"
+                src="/src/Logos/linkedin-icon.png"
                 alt="Link to LinkedIn"
               />
             </a>
-            <a href="https://pda.104.com.tw/profile/share/2130RPFEGwRUsf2thAD6BIjgfnviSI2J">
+            <a
+              href="https://pda.104.com.tw/profile/share/2130RPFEGwRUsf2thAD6BIjgfnviSI2J"
+              target="_blank"
+            >
               <img
                 className="rounded-full hover:scale-105 duration-200"
-                src="/src/assets/104-icon.png"
+                src="/src/Logos/104-icon.png"
                 alt="Link to 104"
               />
             </a>
@@ -97,14 +100,6 @@ const BasicInfo = () => {
           <button
             className="hover:bg-neutral-700 p-2 hover:scale-105 active:scale-100 transition-all duration-150"
             onClick={() => {
-              flipCard({ status: "photo" });
-            }}
-          >
-            Photoshop
-          </button>
-          <button
-            className="hover:bg-neutral-700 p-2 hover:scale-105 active:scale-100 transition-all duration-150"
-            onClick={() => {
               flipCard({ status: "design" });
             }}
           >
@@ -112,11 +107,16 @@ const BasicInfo = () => {
           </button>
         </div>
       </div>
-      <div className="backface-hidden absolute flip-card-back bg-transparent p-3 sm:p-14 text-neutral-300 flex justify-center items-center">
-        <div className="bg-rain rounded-2xl border border-neutral-800 shadow-xl p-5 overflow-y-auto max-h-[630px]">
+      <div className="backface-hidden absolute flip-card-back p-3 sm:p-14 text-neutral-300 flex justify-center items-center bg-opacity-10">
+        <div className="bg-rain bg-neutral-800 rounded-2xl border border-neutral-800 shadow-xl p-5 overflow-y-auto flex items-center justify-center max-h-[700px]">
+          <button
+            className="top-4 left-4 text-neutral-300 flex justify-start rounded-full hover:bg-neutral-500 duration-300 text-2xl hover:scale-110"
+            onClick={() => flipCard({ status: "home" })}
+          >
+            <FiChevronLeft />
+          </button>
           {page.status == "about" && <AboutMe />}
           {page.status == "project" && <Projects />}
-          {page.status == "photo" && <Photoshop />}
           {page.status == "design" && <DesignAnimation />}
         </div>
       </div>

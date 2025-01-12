@@ -9,3 +9,7 @@
 .flip-card-back {
   transform: rotateY(180deg);
 }
+
+.project-description {
+  @apply w-full h-full hover:bg-neutral-900 hover:bg-opacity-90 rounded-md duration-200 p-4 flex items-end text-xs hover:shadow-sm border hover:border-neutral-700;
+}
