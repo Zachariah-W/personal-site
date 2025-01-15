@@ -1,6 +1,7 @@
 import { useState } from "react";
-import shiori from "./Projects/shiori-cover.jpg";
-import hence from "./Projects/hence-cover.jpg";
+import shiori from "../public/Projects/shiori-cover.jpg";
+import hence from "../public/Projects/hence-cover.jpg";
+import qadir from "../public/Projects/qadir-cover.jpg";
 import { Link } from "react-router-dom";
 
 const Projects = () => {
@@ -49,6 +50,31 @@ const Projects = () => {
             <div className="flex flex-col gap-2">
               <p>
                 Hence is a site that allows you to build personal calculators
+              </p>
+              <p className="font-semibold">Click for details</p>
+            </div>
+          )}
+        </div>
+      </Link>
+      <Link
+        to="/Qadir"
+        style={{ backgroundImage: `url(${qadir})` }}
+        className="bg-cover bg-center"
+      >
+        <div
+          className="project-description"
+          onMouseEnter={() => {
+            setDisplay("qadir");
+          }}
+          onMouseLeave={() => {
+            setDisplay("");
+          }}
+        >
+          {display == "qadir" && (
+            <div className="flex flex-col gap-2">
+              <p>
+                Qadir Corp is a robotic automation company and custamize and
+                designs machines for clients
               </p>
               <p className="font-semibold">Click for details</p>
             </div>

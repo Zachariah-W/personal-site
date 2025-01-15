@@ -1,10 +1,10 @@
 import Animation from "./Animation";
-import personalLogo from "./Animate/personal-logo-animation.json";
-import qadirLogo from "./Animate/qadir-logo.json";
-import writingIcon from "./Animate/writing-icon.json";
-import sunMoon from "./Animate/sun-moon-icon.json";
-import alarm from "./Animate/alarm-icon.json";
-import folder from "./Animate/folder-icon.json";
+import personalLogo from "../public/Animate/personal-logo-animation.json";
+import qadirLogo from "../public/Animate/qadir-logo.json";
+import writingIcon from "../public/Animate/writing-icon.json";
+import sunMoon from "../public/Animate/sun-moon-icon.json";
+import alarm from "../public/Animate/alarm-icon.json";
+import folder from "../public/Animate/folder-icon.json";
 
 const DesignAnimation = () => {
   return (
