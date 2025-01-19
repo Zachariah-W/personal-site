@@ -1,5 +1,6 @@
 import BasicInfo from "./BasicInfo";
 import Hence from "./Hence";
+import Livelink from "./Livelink";
 import Qadir from "./Qadir";
 import Shiori from "./Shiori";
 import { Route, Routes } from "react-router-dom";
@@ -23,6 +24,7 @@ function App() {
         <Route path="/" element={<BasicInfo />} />
         <Route path="/Shiori" element={<Shiori />} />
         <Route path="/Hence" element={<Hence />} />
+        <Route path="/Livelink" element={<Livelink />} />
         <Route path="/Qadir" element={<Qadir />} />
       </Routes>
     </div>

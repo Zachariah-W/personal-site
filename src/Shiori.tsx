@@ -1,3 +1,10 @@
+import { useState } from "react";
+import { motion } from "framer-motion";
+import add from "../public/Projects/shiori-wf/add-edit-wf.jpg";
+import data from "../public/Projects/shiori-wf/data-wf.jpg";
+import home from "../public/Projects/shiori-wf/home-wf.jpg";
+import landing from "../public/Projects/shiori-wf/landing-wf.jpg";
+import trip from "../public/Projects/shiori-wf/trip-wf.jpg";
 import banner from "../public/Projects/shiori-banner.svg";
 import demoVideo from "../public/Projects/shiori-demo.mp4";
 import tsLogo from "../public/Projects/Tools/ts-logo.png";
@@ -12,6 +19,39 @@ import searchDemo from "../public/Projects/shiori-searchBar-demo.mp4";
 import graphDemo from "../public/Projects/shiori-graph-demo.mp4";
 
 const Shiori = () => {
+  const [positionIndexes, setPositionIndexes] = useState([0, 1, 2, 3, 4]);
+
+  const handleNext = () => {
+    setPositionIndexes((prevIndexes) => {
+      const updatedIndexes = prevIndexes.map(
+        (prevIndex) => (prevIndex + 1) % 5
+      );
+      return updatedIndexes;
+    });
+  };
+
+  const handleBack = () => {
+    setPositionIndexes((prevIndexes) => {
+      const updatedIndexes = prevIndexes.map(
+        (prevIndex) => (prevIndex + 4) % 5
+      );
+
+      return updatedIndexes;
+    });
+  };
+
+  const images = [add, data, home, landing, trip];
+
+  const positions = ["center", "left1", "left", "right", "right1"];
+
+  const imageVariants = {
+    center: { x: "0%", scale: 1, zIndex: 5 },
+    left1: { x: "-50%", scale: 0.7, zIndex: 3 },
+    left: { x: "-90%", scale: 0.5, zIndex: 2 },
+    right: { x: "90%", scale: 0.5, zIndex: 1 },
+    right1: { x: "50%", scale: 0.7, zIndex: 3 },
+  };
+
   return (
     <div className="flex flex-col items-center gap-4 overflow-y-auto h-full rounded-lg w-full mx-4 *:text-neutral-300 bg-rain bg-neutral-800 shadow-2xl">
       <img src={banner} alt="shiori banner" className="w-full shadow-2xl" />
@@ -62,37 +102,44 @@ const Shiori = () => {
       {/* Features */}
       <div className=" w-full mt-3 px-8">
         <div className="flex flex-row justify-between bg-neutral-200 text-neutral-800 rounded-xl px-2 items-center shadow-xl shadow-neutral-800">
-          <h2 className="text-7xl font-semibold h-full w-1/2 text-center">
+          <h2 className="text-7xl font-semibold h-full w-1/3 text-center">
             Features
           </h2>
-          <ul className="*:mb-2 text-md w-1/2 pl-5 text-left border border-l-neutral-800 py-3">
+          <ul className="*:mb-2 text-md w-2/3 pl-5 text-left border border-l-neutral-800 py-3">
             <li>
               <span className="font-semibold">Create New Trips</span>
-              <br /> Add a trip with essential details like title, location,
-              dates, and images
+              <br /> Users can add trips with essential details such as title,
+              location, dates, events, and images.
             </li>
             <li>
               <span className="font-semibold">Event Tracking</span>
-              <br /> Add events during your trip to document activities, with
-              titles and descriptions
+              <br /> Users can add events while creating trips, allowing them to
+              document their experiences and feelings in greater detail.
             </li>
             <li>
               <span className="font-semibold">Trip Overview</span>
-              <br /> See all trips on the home screen with basic information.
-              Click on a trip for detailed views
+              <br /> View all trips on the home screen with basic information
+              such as trip title, location, and banner images. To view the
+              details of a trip, users simply need to click on the trip, and
+              they will be redirected to the trip information page.
             </li>
             <li>
               <span className="font-semibold">Trip Management</span>
-              <br /> Edit or delete trips as needed
+              <br /> Users can edit or delete any elements of a trip in case
+              they make a mistake or want to add more information later.
             </li>
             <li>
               <span className="font-semibold">Travel Data Insights</span>
-              <br /> Track your travel data and history
+              <br /> Users can view their travel data by clicking the "Data"
+              button at the top. Information such as the number of countries
+              visited and the top visited countries will be displayed.
             </li>
             <li>
               <span className="font-semibold">Google Authentication</span>
-              <br /> Log in using your Google account to securely access and
-              manage your trips
+              <br /> Users' data is stored securely based on their email
+              accounts, ensuring their information remains safe. This also
+              allows users to access their trips anywhere and anytime, as long
+              as they can log in to Gmail.
             </li>
           </ul>
         </div>
@@ -103,9 +150,48 @@ const Shiori = () => {
           Documentation and Design
         </h1>
       </div>
-      <div className="mx-8 flex flex-row items-center justify-between">
-        <div></div>
-        <div></div>
+      <div className="w-full px-8 flex flex-col items-center gap-6 pt-2">
+        <div className="bg-neutral-200 rounded-md p-3 flex flex-col w-1/2 *:text-neutral-800">
+          <h2 className="text-xl font-semibold">Target Audience</h2>
+          <p>
+            The target audience for Shiori is mainly towards the ealderly
+            people.
+          </p>
+        </div>
+        <div className="flex flex-col items-center w-full rounded-xl bg-neutral-200 py-6">
+          <h2 className="text-neutral-800 mb-4 font-bold text-5xl border border-b-neutral-800 w-full text-center pb-3">
+            Wireframes
+          </h2>
+          <div className="relative w-full h-96 overflow-hidden flex justify-center">
+            {images.map((image, index) => (
+              <motion.img
+                key={index}
+                src={image}
+                alt={`Slide ${index + 1}`}
+                className="rounded-xl shadow-md"
+                initial="center"
+                animate={positions[positionIndexes[index]]}
+                variants={imageVariants}
+                transition={{ duration: 0.5 }}
+                style={{ width: "40%", position: "absolute" }}
+              />
+            ))}
+          </div>
+          <div className="flex flex-row gap-3">
+            <button
+              className="text-white bg-neutral-800 rounded-lg py-2 px-4"
+              onClick={handleBack}
+            >
+              Back
+            </button>
+            <button
+              className="text-white bg-neutral-800 rounded-lg py-2 px-4"
+              onClick={handleNext}
+            >
+              Next
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );

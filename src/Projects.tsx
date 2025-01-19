@@ -2,13 +2,14 @@ import { useState } from "react";
 import shiori from "../public/Projects/shiori-cover.jpg";
 import hence from "../public/Projects/hence-cover.jpg";
 import qadir from "../public/Projects/qadir-cover.jpg";
+import livelink from "../public/Projects/livelink-cover.jpg";
 import { Link } from "react-router-dom";
 
 const Projects = () => {
   const [display, setDisplay] = useState<string>("");
 
   return (
-    <div className="p-3 grid grid-cols-3 gap-4 items-center *:w-52 *:h-64 *:rounded-lg">
+    <div className="p-3 grid grid-cols-4 gap-4 items-center *:w-52 *:h-64 *:rounded-lg">
       <Link
         to="/Shiori"
         style={{ backgroundImage: `url(${shiori})` }}
@@ -31,7 +32,6 @@ const Projects = () => {
           )}
         </div>
       </Link>
-
       <Link
         to="/Hence"
         style={{ backgroundImage: `url(${hence})` }}
@@ -75,6 +75,31 @@ const Projects = () => {
               <p>
                 Qadir Corp is a robotic automation company and custamize and
                 designs machines for clients
+              </p>
+              <p className="font-semibold">Click for details</p>
+            </div>
+          )}
+        </div>
+      </Link>
+      <Link
+        to="/Livelink"
+        style={{ backgroundImage: `url(${livelink})` }}
+        className="bg-cover bg-center"
+      >
+        <div
+          className="project-description"
+          onMouseEnter={() => {
+            setDisplay("livelink");
+          }}
+          onMouseLeave={() => {
+            setDisplay("");
+          }}
+        >
+          {display == "livelink" && (
+            <div className="flex flex-col gap-2">
+              <p>
+                Livelink Healthcare is a nonprofit organization located in South
+                Africa
               </p>
               <p className="font-semibold">Click for details</p>
             </div>

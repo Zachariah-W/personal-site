@@ -4,6 +4,11 @@ import AboutMe from "./AboutMe";
 import DesignAnimation from "./DesignAnimation";
 import { motion } from "framer-motion";
 import { FiChevronLeft } from "react-icons/fi";
+import personalLogo from "../public/Logos/Black_Linear_Fill_Black_Bg.png";
+import twLogo from "../public/Logos/104-icon.png";
+import linkedinLogo from "../public/Logos/linkedIn-icon.png";
+import gitLogo from "../public/Logos/github-icon.png";
+import gmailLogo from "../public/Logos/gmail-icon.webp";
 
 type PageStatus = {
   status: "home" | "about" | "design" | "photo" | "project";
@@ -43,28 +48,28 @@ const BasicInfo = () => {
         <div className="flex flex-col justify-center gap-3 items-center h-full">
           <img
             className="rounded-2xl max-w-32"
-            src="/src/Logos/Black_Linear_Fill_Black_Bg.png"
+            src={personalLogo}
             alt="Image of Zachariah Wang"
           />
           <div className="flex flex-row items-center justify-center gap-3 *:w-8">
             <a href="mailto:zachwangs@gmail.com" target="_blank">
               <img
                 className="rounded-full hover:scale-105 duration-200"
-                src="/src/Logos/gmail-icon.webp"
+                src={gmailLogo}
                 alt="Link to Gmail"
               />
             </a>
             <a href="https://github.com/Zachariah-W" target="_blank">
               <img
                 className="rounded-full hover:scale-105 duration-200"
-                src="/src/Logos/github-icon.png"
+                src={gitLogo}
                 alt="Link to GitHub"
               />
             </a>
             <a href="https:/linkedin.com/in/zachariah-wang" target="_blank">
               <img
                 className="rounded-full hover:scale-105 duration-200"
-                src="/src/Logos/linkedin-icon.png"
+                src={linkedinLogo}
                 alt="Link to LinkedIn"
               />
             </a>
@@ -74,7 +79,7 @@ const BasicInfo = () => {
             >
               <img
                 className="rounded-full hover:scale-105 duration-200"
-                src="/src/Logos/104-icon.png"
+                src={twLogo}
                 alt="Link to 104"
               />
             </a>
