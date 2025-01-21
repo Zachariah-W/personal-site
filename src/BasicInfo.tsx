@@ -66,7 +66,10 @@ const BasicInfo = () => {
                 alt="Link to GitHub"
               />
             </a>
-            <a href="https:/linkedin.com/in/zachariah-wang" target="_blank">
+            <a
+              href="https://www.linkedin.com/in/zachariah-wang/"
+              target="_blank"
+            >
               <img
                 className="rounded-full hover:scale-105 duration-200"
                 src={linkedinLogo}
