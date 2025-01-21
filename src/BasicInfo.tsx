@@ -74,7 +74,7 @@ const BasicInfo = () => {
               />
             </a>
             <a
-              href="https://pda.104.com.tw/profile/share/2130RPFEGwRUsf2thAD6BIjgfnviSI2J"
+              href="https://pda.104.com.tw/profile/share/21M0E5lcPZLvTMpRCSyKYRhZYCMwFfFc"
               target="_blank"
             >
               <img
