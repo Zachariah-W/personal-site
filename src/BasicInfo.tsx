@@ -44,10 +44,10 @@ const BasicInfo = () => {
         setAnimating(false);
       }}
     >
-      <div className="backface-hidden absolute flex flex-row items-center justify-evenly gap-6 px-10 py-8 bg-rain shadow-xl bg-neutral-800 rounded-2xl text-neutral-300 border border-neutral-800 hover:animate-wiggle">
+      <div className="backface-hidden absolute flex flex-row items-center justify-evenly gap-6 px-10 py-8 shadow-lg bg-neutral-50 rounded-2xl border border-neutral-200 hover:animate-wiggle text-neutral-600">
         <div className="flex flex-col justify-center gap-3 items-center h-full">
           <img
-            className="rounded-2xl max-w-32"
+            className="rounded-2xl max-w-32 text-5xl"
             src={personalLogo}
             alt="Image of Zachariah Wang"
           />
@@ -90,7 +90,7 @@ const BasicInfo = () => {
         </div>
         <div className="flex flex-col item-center justify-center *:text-xl *:text-left *:font-semibold h-full *:rounded-lg *:w-full">
           <button
-            className="hover:bg-neutral-700 p-2 hover:scale-105 active:scale-100 transition-all duration-150"
+            className="hover:bg-neutral-200 p-2 hover:scale-105 active:scale-100 transition-all duration-150"
             onClick={() => {
               flipCard({ status: "about" });
             }}
@@ -98,7 +98,7 @@ const BasicInfo = () => {
             About Me
           </button>
           <button
-            className="hover:bg-neutral-700 p-2 hover:scale-105 active:scale-100 transition-all duration-150"
+            className="hover:bg-neutral-200 p-2 hover:scale-105 active:scale-100 transition-all duration-150"
             onClick={() => {
               flipCard({ status: "project" });
             }}
@@ -106,7 +106,7 @@ const BasicInfo = () => {
             Projects
           </button>
           <button
-            className="hover:bg-neutral-700 p-2 hover:scale-105 active:scale-100 transition-all duration-150"
+            className="hover:bg-neutral-200 p-2 hover:scale-105 active:scale-100 transition-all duration-150"
             onClick={() => {
               flipCard({ status: "design" });
             }}
@@ -116,7 +116,7 @@ const BasicInfo = () => {
         </div>
       </div>
       <div className="backface-hidden absolute flip-card-back p-3 sm:p-14 text-neutral-300 flex justify-center items-center bg-opacity-10">
-        <div className="bg-rain bg-neutral-800 rounded-2xl border border-neutral-800 shadow-xl p-5 overflow-y-auto flex items-center justify-center max-h-[700px]">
+        <div className="bg-neutral-50 rounded-2xl border border-neutral-200 shadow-xl p-5 overflow-y-auto flex items-center justify-center max-h-[700px]">
           <button
             className="top-4 left-4 text-neutral-300 flex justify-start rounded-full hover:bg-neutral-500 duration-300 text-2xl hover:scale-110"
             onClick={() => flipCard({ status: "home" })}

@@ -53,22 +53,22 @@ const Shiori = () => {
   };
 
   return (
-    <div className="flex flex-col items-center gap-4 overflow-y-auto h-full rounded-lg w-full mx-4 *:text-neutral-300 bg-rain bg-neutral-800 shadow-2xl">
-      <img src={banner} alt="shiori banner" className="w-full shadow-2xl" />
+    <div className="flex flex-col items-center gap-4 overflow-y-auto h-full rounded-lg w-full mx-4 *:text-neutral-800 bg-neutral-100 shadow-2xl border border-neutral-200">
+      <img src={banner} alt="shiori banner" className="w-full" />
       {/* Basic Info and Tech Stack */}
       <div className=" flex flex-row justify-between items-center mx-8">
-        <div className="w-2/3 text-neutral-800 bg-neutral-200 rounded-xl p-3 shadow-xl shadow-neutral-800">
+        <div className="w-2/3 bg-neutral-100 p-3">
           <h2 className="text-xl font-bold">About Shiori</h2>
           <p>
-            Shiori is a simple and user-friendly trip planner and manager that
-            helps user organize and document your trips. Users can plan their
-            trips, add events, and capture your memories all in one place,
-            making it easier for user to look up for trips in the past.
+            Shiori is a simple and user-friendly trip blog that helps user
+            organize their trip journel. Users can plan their trips, add events,
+            and capture your memories all in one place, making it easier for
+            user to look up for trips in the past.
           </p>
         </div>
-        <div className="flex flex-col gap-5 text-neutral-800 p-4 bg-neutral-200 shadow-xl shadow-neutral-800 rounded-xl">
+        <div className="flex flex-col gap-5 p-4">
           <h2 className="text-xl font-bold">Tools used</h2>
-          <div className="flex flex-rows gap-2 justify-start items-center *:bg-center *:w-10 *:h-10 *:rounded-md *:shadow-md">
+          <div className="flex flex-rows gap-2 justify-start items-center *:bg-center *:w-10 *:h-10 *:rounded-md">
             <img src={tsLogo} />
             <img src={jsLogo} />
             <img src={figmaLogo} />
@@ -80,8 +80,10 @@ const Shiori = () => {
           </div>
         </div>
       </div>
+      {/* Documentations */}
+      <div></div>
       {/* Demo Video Display */}
-      <div className="flex flex-row gap-4 mx-8 p-3 *:w-1/2 rounded-xl bg-neutral-200 shadow-xl shadow-neutral-800">
+      <div className="flex flex-row gap-4 mx-8 p-3 *:w-1/2 rounded-xl bg-neutral-100">
         <div className="flex flex-col *:rounded-xl max-w-screen-sm gap-5">
           <div className="flex flex-row justify-between *:rounded-xl items-center">
             <h1 className=" text-neutral-800 text-6xl font-bold">
@@ -101,11 +103,11 @@ const Shiori = () => {
       </div>
       {/* Features */}
       <div className=" w-full mt-3 px-8">
-        <div className="flex flex-row justify-between bg-neutral-200 text-neutral-800 rounded-xl px-2 items-center shadow-xl shadow-neutral-800">
+        <div className="flex flex-row justify-between bg-neutral-100 rounded-xl px-2 items-center">
           <h2 className="text-7xl font-semibold h-full w-1/3 text-center">
             Features
           </h2>
-          <ul className="*:mb-2 text-md w-2/3 pl-5 text-left border border-l-neutral-800 py-3">
+          <ul className="*:mb-2 text-md w-2/3 pl-5 text-left py-3">
             <li>
               <span className="font-semibold">Create New Trips</span>
               <br /> Users can add trips with essential details such as title,
@@ -145,21 +147,21 @@ const Shiori = () => {
         </div>
       </div>
       {/* Documentationn */}
-      <div className="w-full items-center flex justify-center py-28 bg-neutral-200">
+      <div className="w-full items-center flex justify-center py-28 bg-neutral-100">
         <h1 className="text-neutral-800 font-bold text-7xl">
           Documentation and Design
         </h1>
       </div>
       <div className="w-full px-8 flex flex-col items-center gap-6 pt-2">
-        <div className="bg-neutral-200 rounded-md p-3 flex flex-col w-1/2 *:text-neutral-800">
+        <div className="bg-neutral-100 rounded-md p-3 flex flex-col w-1/2">
           <h2 className="text-xl font-semibold">Target Audience</h2>
           <p>
             The target audience for Shiori is mainly towards the ealderly
             people.
           </p>
         </div>
-        <div className="flex flex-col items-center w-full rounded-xl bg-neutral-200 py-6">
-          <h2 className="text-neutral-800 mb-4 font-bold text-5xl border border-b-neutral-800 w-full text-center pb-3">
+        <div className="flex flex-col items-center w-full rounded-xl bg-neutral-100 py-6">
+          <h2 className="mb-4 font-bold text-5xl w-full text-center pb-3">
             Wireframes
           </h2>
           <div className="relative w-full h-96 overflow-hidden flex justify-center">
